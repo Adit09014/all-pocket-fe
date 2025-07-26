@@ -5,7 +5,7 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 import { useAppStore } from './appStore';
 
-const BASE_URL = 'http://localhost:3000';
+const BASE_URL = 'https://all-pocket-be.onrender.com/';
 
 export default function EditDebt({ closeEvent, debtToEdit }) {
   const [person, setPerson] = useState('');

@@ -19,7 +19,7 @@ const modalStyle = {
   boxShadow: 24, p: 4, borderRadius: 2
 };
 
-const BASE_URL = 'http://localhost:3000';
+const BASE_URL = 'https://all-pocket-be.onrender.com/';
 
 export default function LentManage() {
   const theme = useTheme();

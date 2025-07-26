@@ -19,7 +19,7 @@ export default function AccountWidget() {
   const [anchorEl, setAnchorEl] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:3000/api/auth/verify', {
+    fetch('https://all-pocket-be.onrender.com//api/auth/verify', {
       credentials: 'include',
     })
       .then(res => res.json())
@@ -36,7 +36,7 @@ export default function AccountWidget() {
   }, []);
 
   const handleLogout = async () => {
-    await fetch('http://localhost:3000/api/auth/logout', {
+    await fetch('https://all-pocket-be.onrender.com//api/auth/logout', {
       method: 'POST',
       credentials: 'include',
     });

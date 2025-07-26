@@ -5,7 +5,7 @@ import {
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import axios from 'axios';
 
-const BASE_URL = "http://localhost:3000/api";
+const BASE_URL = "https://all-pocket-be.onrender.com//api";
 
 export default function NotificationButton() {
   const [anchorEl, setAnchorEl] = useState(null);

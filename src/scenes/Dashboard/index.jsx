@@ -17,7 +17,7 @@ export const Dashboard = ({ isSideBar }) => {
 
   const getAccount = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/accounts",{
+      const res = await axios.get("https://all-pocket-be.onrender.com//api/accounts",{
         withCredentials:true
       });
       setAccount(res.data);
@@ -28,7 +28,7 @@ export const Dashboard = ({ isSideBar }) => {
 
   const getInvestment = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/investments",{
+      const res = await axios.get("https://all-pocket-be.onrender.com//api/investments",{
         withCredentials:true
       });
       setInvestment(res.data);
@@ -39,7 +39,7 @@ export const Dashboard = ({ isSideBar }) => {
 
   const getDebt = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/debt",{
+      const res = await axios.get("https://all-pocket-be.onrender.com//api/debt",{
         withCredentials:true
       });
       setDebt(res.data);
@@ -50,7 +50,7 @@ export const Dashboard = ({ isSideBar }) => {
 
   const getLent = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/lent",{
+      const res = await axios.get("https://all-pocket-be.onrender.com//api/lent",{
         withCredentials:true
       });
       setLent(res.data);
@@ -61,7 +61,7 @@ export const Dashboard = ({ isSideBar }) => {
 
   const getExpense = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/expenses",{
+      const res = await axios.get("https://all-pocket-be.onrender.com//api/expenses",{
         withCredentials:true
       });
       setExpense(res.data);
@@ -72,7 +72,7 @@ export const Dashboard = ({ isSideBar }) => {
 
   const getBudget = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/budgets",{
+      const res = await axios.get("https://all-pocket-be.onrender.com//api/budgets",{
         withCredentials:true
       });
       setBudget(res.data);

@@ -29,7 +29,7 @@ const modalStyle = {
 };
 
 export const BudgetManage = () => {
-  const BASE_URL = "http://localhost:3000";
+  const BASE_URL = "https://all-pocket-be.onrender.com/";
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 

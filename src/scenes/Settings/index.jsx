@@ -3,7 +3,7 @@ import { Typography, Box, Button, Grid, TextField } from '@mui/material';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 
-const BASE_URL = 'http://localhost:3000';
+const BASE_URL = 'https://all-pocket-be.onrender.com/';
 
 export const Settings = () => {
   const [useremail, setUserEmail] = useState('');

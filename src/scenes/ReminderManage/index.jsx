@@ -39,7 +39,7 @@ export const Reminder = () => {
   const [editModalOpen, setEditModalOpen] = useState(false);
     const [reminderToEdit, setReminderToEdit] = useState(null);
 
-  const BASE_URL = 'http://localhost:3000';
+  const BASE_URL = 'https://all-pocket-be.onrender.com/';
 
   const handleDateClick = (selectInfo) => {
     setSelectedDateInfo(selectInfo);

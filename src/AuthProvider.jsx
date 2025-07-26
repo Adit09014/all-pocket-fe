@@ -10,7 +10,7 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        const res = await fetch("https://all-pocket-be.onrender.com//api/auth/verify", {
+        const res = await fetch("https://all-pocket-be.onrender.com/api/auth/verify", {
           credentials: "include",
         });
         const data = await res.json();

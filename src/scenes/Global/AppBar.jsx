@@ -24,7 +24,7 @@ export const AppBar = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
-    fetch('https://all-pocket-be.onrender.com//api/auth/verify', {
+    fetch('https://all-pocket-be.onrender.com/api/auth/verify', {
       credentials: 'include',
     })
       .then(res => res.json())

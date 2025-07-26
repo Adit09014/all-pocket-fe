@@ -13,7 +13,7 @@ export default function AccountCard() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    fetch('https://all-pocket-be.onrender.com//api/auth/verify', {
+    fetch('https://all-pocket-be.onrender.com/api/auth/verify', {
       credentials: 'include',
     })
       .then(res => res.json())
@@ -29,7 +29,7 @@ export default function AccountCard() {
   }, []);
 
   const handleLogout = async () => {
-    await fetch('https://all-pocket-be.onrender.com//api/auth/logout', {
+    await fetch('https://all-pocket-be.onrender.com/api/auth/logout', {
       method: 'POST',
       credentials: 'include',
     });

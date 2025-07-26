@@ -90,7 +90,7 @@ export const Signup = () => {
     if (!isValid) return;
 
     try {
-      const response = await fetch('https://all-pocket-be.onrender.com//api/auth/signup', {
+      const response = await fetch('https://all-pocket-be.onrender.com/api/auth/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

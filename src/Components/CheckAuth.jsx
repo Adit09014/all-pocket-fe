@@ -13,7 +13,7 @@ export const AuthProvider = ({ children }) => {
         credentials: 'include',
       });
       const result = await res.json();
-      setIsAuthenticated(res.ok && result.success);
+      setIsAuthenticated(res.ok && result.valid); // <-- fixed here
     } catch (err) {
       setIsAuthenticated(false);
     }

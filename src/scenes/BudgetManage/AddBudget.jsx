@@ -8,7 +8,7 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 import { useAppStore } from '../../appStore';
 
-const BASE_URL = 'http://localhost:3000';
+const BASE_URL = 'https://all-pocket-be.onrender.com/';
 
 export const AddBudget = ({ closeEvent }) => {
   const [category, setCategory] = useState('');

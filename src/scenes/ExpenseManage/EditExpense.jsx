@@ -12,7 +12,7 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 import { useAppStore } from '../../appStore';
 
-const BASE_URL = 'https://all-pocket-be.onrender.com/';
+const BASE_URL = 'https://all-pocket-be.onrender.com';
 
 export default function EditExpense({ closeEvent, expenseToEdit }) {
   const [category, setCategory] = useState('');

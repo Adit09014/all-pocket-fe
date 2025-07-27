@@ -8,7 +8,7 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 import { useAppStore } from '../../appStore';
 
-const BASE_URL = 'https://all-pocket-be.onrender.com/';
+const BASE_URL = 'https://all-pocket-be.onrender.com';
 
 export function EditReminder({ closeEvent, reminderToEdit }) {
   const [reminderTitle, setReminderTitle] = useState('');

@@ -1,27 +1,28 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
+  // Optional: Check token when app loads
   useEffect(() => {
-    const token = localStorage.getItem("token");
-    setIsAuthenticated(!!token);
+    const checkAuth = async () => {
+      try {
+        const res = await fetch("https://all-pocket-be.onrender.com/api/auth/verify", {
+          credentials: "include",
+        });
+        const data = await res.json();
+        setIsAuthenticated(data.valid === true);
+      } catch (err) {
+        setIsAuthenticated(false);
+      }
+    };
+    checkAuth();
   }, []);
 
-  const login = (token) => {
-    localStorage.setItem("token", token);
-    setIsAuthenticated(true);
-  };
-
-  const logout = () => {
-    localStorage.removeItem("token");
-    setIsAuthenticated(false);
-  };
-
   return (
-    <AuthContext.Provider value={{ isAuthenticated, login, logout }}>
+    <AuthContext.Provider value={{ isAuthenticated, setIsAuthenticated }}>
       {children}
     </AuthContext.Provider>
   );

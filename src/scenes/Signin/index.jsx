@@ -21,8 +21,7 @@ export const Signin = () => {
   const colors = tokens(theme.palette.mode);
   const colorMode = useContext(ColorModeContext);
   const navigate = useNavigate();
-  const { isAuthenticated, login } = useContext(AuthContext);
-
+  const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
 
   const [formData, setFormData] = useState({ email: '', password: '' });
   const [emailError, setEmailError] = useState(false);
@@ -52,46 +51,45 @@ export const Signin = () => {
   });
 
   const handleSubmit = async (e) => {
-  e.preventDefault();
-  let isValid = true;
-  setEmailError(false);
-  setPasswordError(false);
+    e.preventDefault();
+    let isValid = true;
+    setEmailError(false);
+    setPasswordError(false);
 
-  if (!formData.email || !/\S+@\S+\.\S+/.test(formData.email)) {
-    isValid = false;
-    setEmailError(true);
-    setEmailErrormsg('Please enter a valid email address.');
-  }
-
-  if (!formData.password || formData.password.length < 6) {
-    isValid = false;
-    setPasswordError(true);
-    setPasswordErrormsg('Password must be at least 6 characters long.');
-  }
-
-  if (!isValid) return;
-
-  try {
-    const response = await fetch('https://all-pocket-be.onrender.com/api/auth/login', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      credentials: 'include',
-      body: JSON.stringify(formData),
-    });
-
-    const result = await response.json();
-
-    if (response.ok && result.token) {
-      login(result.token); 
-      navigate("/");       
-    } else {
-      console.error('Sign-in failed:', result.message || result);
+    if (!formData.email || !/\S+@\S+\.\S+/.test(formData.email)) {
+      isValid = false;
+      setEmailError(true);
+      setEmailErrormsg('Please enter a valid email address.');
     }
-  } catch (error) {
-    console.error('Error submitting form:', error);
-  }
-};
 
+    if (!formData.password || formData.password.length < 6) {
+      isValid = false;
+      setPasswordError(true);
+      setPasswordErrormsg('Password must be at least 6 characters long.');
+    }
+
+    if (!isValid) return;
+
+    try {
+      const response = await fetch('https://all-pocket-be.onrender.com/api/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        setIsAuthenticated(true);
+        window.location.href = "/"; // full page reload to reset all
+      } else {
+        console.error('Sign-in failed:', result.message || result);
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+    }
+  };
 
   return (
     <Box
